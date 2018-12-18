@@ -1,0 +1,39 @@
+.ikePagination {
+    font-size: 20px;
+    display: flex;
+
+}
+
+.ikePagination a,
+.ikePagination span {
+	float: left;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 10px;
+    color: #444;
+    box-sizing: border-box;
+}
+
+.ikePagination a.pre,
+.ikePagination a.next {
+    /*font-weight: bold;*/
+    border: 1px solid #323232;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ikePagination a.disabled {
+    color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.ikePagination a:hover,
+.ikePagination a.active {
+    color: #fff;
+    background-color: #323232;
+}
+.ikePagination a.active {
+    cursor: not-allowed;
+    pointer-events: none;
+}
