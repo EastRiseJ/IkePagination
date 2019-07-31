@@ -42,8 +42,9 @@ class IkePagination {
     changeTotal (newTotal) {
         if (this.options.total !== newTotal) {
             this.options.total = newTotal;
-            this.options.pageIndex = 1;
+            // this.options.pageIndex = 1;
             this.renderMoreDom();
+            this.btnStatusChange();
         }
     }
 
@@ -63,9 +64,11 @@ class IkePagination {
             set (val) {
                 _this.options['__pageIndex__'] = val;
 
-                _this.renderMoreDom();
-                _this.pageIndexActive();
-                _this.btnStatusChange();
+                setTimeout(() => {
+                    _this.renderMoreDom();
+                    _this.pageIndexActive();
+                    _this.btnStatusChange();
+                }, 0)
 
                 // 事件回调
                 _this.options.pageChange && _this.options.pageChange(_this.options.pageIndex, _this.options.pageSize);
